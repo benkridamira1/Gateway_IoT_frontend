@@ -23,6 +23,7 @@ import {authInterceptorProviders} from './_helpers/auth.interceptor';
 import { UpdateMeterComponent } from './meter/update-meter/update-meter/update-meter.component';
 import { UpdateGatewayComponent } from './gateway/update-gateway/update-gateway.component';
 import { TestAddComponent } from './test-add/test-add.component';
+import { CronComponent } from './cron/cron.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { TestAddComponent } from './test-add/test-add.component';
     LoginComponent,
     UpdateMeterComponent,
     UpdateGatewayComponent,
-    TestAddComponent  ],
+    TestAddComponent,
+    CronComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

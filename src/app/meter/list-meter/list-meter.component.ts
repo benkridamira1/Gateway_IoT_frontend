@@ -5,9 +5,6 @@ import { Meter } from 'src/app/models/meter';
 import { MeterService } from 'src/app/services/meter.service'
 import { Router,RouterLink } from '@angular/router';
 
-
-
-
 import { FormBuilder, FormControl, FormGroup , Validators} from '@angular/forms';
 
 @Component({
