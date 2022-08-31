@@ -1,0 +1,235 @@
+<div class="container" >
+    <h1 style ="text-align: center;"> <br> Add A Gateway </h1>
+    
+    
+        <!-- Add Quiz -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add A Gateway
+      </button>
+    
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content" >
+            <div class="modal-header" >
+              <h5 class="modal-title" id="exampleModalLabel"  > <b> Add A Gateway</b></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+    
+              <form class="form-inline" [formGroup]="formValue" (ngSubmit)="addGateway()"> 
+                   
+                <div class="col-md-6">
+
+               
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"  > id: </label>
+                  <input type="number" class="form-control mb-2 col-8"   formControlName="id" style="width: 100%;"  placeholder="id" >
+                  <div *ngIf="(f['id'].touched || f['id'].dirty  ) && f['id'].invalid " style="color: red;">
+                    <div *ngIf="f['id'].errors && f['id'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> id is required.</div>
+         
+                    </div>
+                </div>
+
+
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > name: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="name" style="width: 100%;"  placeholder="name" >
+                  <div *ngIf="(f['name'].touched || f['name'].dirty  ) && f['name'].invalid " style="color: red;">
+                    <div *ngIf="f['name'].errors && f['name'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> name is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > name: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="location" style="width: 100%;"  placeholder="location" >
+                  <div *ngIf="(f['location'].touched || f['location'].dirty  ) && f['location'].invalid " style="color: red;">
+                    <div *ngIf="f['location'].errors && f['location'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> location is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > pulling_period: </label>
+                  <input type="number" class="form-control mb-2 col-8"   formControlName="pulling_period" style="width: 100%;"  placeholder="pulling_period" >
+                  <div *ngIf="(f['pulling_period'].touched || f['pulling_period'].dirty  ) && f['pulling_period'].invalid " style="color: red;">
+                    <div *ngIf="f['pulling_period'].errors && f['pulling_period'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> pulling_period is required.</div>
+         
+                    </div>
+                </div>
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > pushing_period: </label>
+                  <input type="number" class="form-control mb-2 col-8"   formControlName="pushing_period" style="width: 100%;"  placeholder="pushing_period" >
+                  <div *ngIf="(f['pushing_period'].touched || f['pushing_period'].dirty  ) && f['pushing_period'].invalid " style="color: red;">
+                    <div *ngIf="f['pushing_period'].errors && f['pushing_period'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> pushing_period is required.</div>
+         
+                    </div>
+                </div>
+                        
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > host: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="host" style="width: 100%;"  placeholder="host" >
+                  <div *ngIf="(f['host'].touched || f['host'].dirty  ) && f['host'].invalid " style="color: red;">
+                    <div *ngIf="f['host'].errors && f['host'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> host is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > port: </label>
+                  <input type="number" class="form-control mb-2 col-8"   formControlName="port" style="width: 100%;"  placeholder="port" >
+                  <div *ngIf="(f['port'].touched || f['port'].dirty  ) && f['port'].invalid " style="color: red;">
+                    <div *ngIf="f['port'].errors && f['port'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> port is required.</div>
+         
+                    </div>
+                </div>
+
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > username: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="username" style="width: 100%;"  placeholder="username" >
+                  <div *ngIf="(f['username'].touched || f['username'].dirty  ) && f['username'].invalid " style="color: red;">
+                    <div *ngIf="f['username'].errors && f['username'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> username is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > password: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="password" style="width: 100%;"  placeholder="password" >
+                  <div *ngIf="(f['password'].touched || f['password'].dirty  ) && f['password'].invalid " style="color: red;">
+                    <div *ngIf="f['password'].errors && f['password'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> password is required.</div>
+         
+                    </div>
+                </div>
+
+</div>
+<div class="col-md-6">
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > use_tls: </label>
+                  <input type="number" class="form-control mb-2 col-8"   formControlName="use_tls" style="width: 100%;"  placeholder="use_tls" >
+                  <div *ngIf="(f['use_tls'].touched || f['use_tls'].dirty  ) && f['use_tls'].invalid " style="color: red;">
+                    <div *ngIf="f['use_tls'].errors && f['use_tls'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> use_tls is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > topic: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="topic" style="width: 100%;"  placeholder="topic" >
+                  <div *ngIf="(f['topic'].touched || f['topic'].dirty  ) && f['topic'].invalid " style="color: red;">
+                    <div *ngIf="f['topic'].errors && f['topic'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> topic is required.</div>
+         
+                    </div>
+                </div>
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > log_file: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="log_file" style="width: 100%;"  placeholder="log_file" >
+                  <div *ngIf="(f['log_file'].touched || f['log_file'].dirty  ) && f['log_file'].invalid " style="color: red;">
+                    <div *ngIf="f['log_file'].errors && f['log_file'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> log_file is required.</div>
+         
+                    </div>
+                </div>
+                        
+
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > backup_file: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="backup_file" style="width: 100%;"  placeholder="backup_file" >
+                  <div *ngIf="(f['backup_file'].touched || f['backup_file'].dirty  ) && f['backup_file'].invalid " style="color: red;">
+                    <div *ngIf="f['backup_file'].errors && f['backup_file'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> backup_file is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > hw_model: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="hw_model" style="width: 100%;"  placeholder="hw_model" >
+                  <div *ngIf="(f['hw_model'].touched || f['hw_model'].dirty  ) && f['hw_model'].invalid " style="color: red;">
+                    <div *ngIf="f['hw_model'].errors && f['hw_model'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> hw_model is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > sw_version: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="sw_version" style="width: 100%;"  placeholder="sw_version" >
+                  <div *ngIf="(f['sw_version'].touched || f['sw_version'].dirty  ) && f['sw_version'].invalid " style="color: red;">
+                    <div *ngIf="f['sw_version'].errors && f['sw_version'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> sw_version is required.</div>
+         
+                    </div>
+                </div>
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > serial_number: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="serial_number" style="width: 100%;"  placeholder="serial_number" >
+                  <div *ngIf="(f['serial_number'].touched || f['serial_number'].dirty  ) && f['serial_number'].invalid " style="color: red;">
+                    <div *ngIf="f['serial_number'].errors && f['serial_number'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> serial_number is required.</div>
+         
+                    </div>
+                </div>
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > board_serial_number: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="board_serial_number" style="width: 100%;"  placeholder="board_serial_number" >
+                  <div *ngIf="(f['board_serial_number'].touched || f['board_serial_number'].dirty  ) && f['board_serial_number'].invalid " style="color: red;">
+                    <div *ngIf="f['board_serial_number'].errors && f['board_serial_number'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> board_serial_number is required.</div>
+         
+                    </div>
+                </div>
+
+
+
+                <div  style="width: 100%;" class="row">
+                  <label class="col-4"   > asset_id: </label>
+                  <input type="text" class="form-control mb-2 col-8"   formControlName="asset_id" style="width: 100%;"  placeholder="asset_id" >
+                  <div *ngIf="(f['asset_id'].touched || f['asset_id'].dirty  ) && f['asset_id'].invalid " style="color: red;">
+                    <div *ngIf="f['asset_id'].errors && f['asset_id'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> asset_id is required.</div>
+         
+                    </div>
+                </div>
+</div>                        
+
+              
+
+                </form>
+    
+
+
+
+    
+    
+            </div>
+            <div class="modal-footer" >
+              <button type="button"  style="margin-right: 200px;" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit"  [disabled]="!formValue.valid" style="margin-right: 10px;" class="btn btn-secondary">Add</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+    
+        </div>

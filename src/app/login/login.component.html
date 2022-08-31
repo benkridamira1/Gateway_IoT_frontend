@@ -1,0 +1,96 @@
+
+    <div class=" row d-flex justify-content-center align-items-center h-50">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-light text-black " style="border-radius: 1rem;">
+          <div class="card-body p-3 ">
+
+            <div class="mb-md-5 mt-md-4 ">
+
+
+              <form
+              *ngIf="!isLoggedIn"
+              name="form"
+              (ngSubmit)="f.form.valid && onSubmit()"
+              #f="ngForm"
+              novalidate
+            >
+
+             
+              <div class="form-outline form-white mb-4  form-group">
+ 
+
+
+
+            <div class="logo">
+              <img src="assets/img/logo/sofia.png" width="270" height="70" alt="" >
+            
+          </div>  
+
+          <br>
+
+                <label class="form-label" for="username">Email :</label>
+
+                <input  id="username" class="form-control form-control"   type="email"
+               
+                name="username"
+                [(ngModel)]="form.username"
+                required
+                #username="ngModel"/>
+                <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="username.errors && f.submitted" >
+              Username is required!
+            </div>
+              </div>
+
+              <div class="form-outline form-white mb-4 form-group">
+                                <label class="form-label" for="password">Password :</label>
+
+                <input type="password" id="password" class="form-control form-control"   
+                
+                name="password"
+                [(ngModel)]="form.password"
+                required
+                #password="ngModel"/>
+                <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="password.errors && f.submitted"
+              >
+                <div *ngIf="password.errors['required']">Password is required</div>
+                
+              </div>
+              </div>
+
+              <div class="text-center">
+                <button class="btn btn-outline-light btn-lg px-5  form-group" type="submit">Login</button>
+
+              </div>
+
+              <div class="form-group">
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  *ngIf="f.submitted && isLoginFailed"
+                >
+                  Login failed: {{ errorMessage }}
+                </div>
+              </div>
+             </form> 
+
+             
+            </div>
+
+        
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    
+    

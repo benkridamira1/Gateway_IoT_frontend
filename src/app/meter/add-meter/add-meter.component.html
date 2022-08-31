@@ -1,0 +1,146 @@
+
+  <div class="container">
+    <div class="title">Add a new Meter</div>
+    <div class="content">
+      <form [formGroup]="formValue"  (ngSubmit)="addMeter()">
+        <div class="user-details">
+          <div class="input-box">
+
+            <span class="details"> node_id: </span>
+        <input type="number"   name="node_id"   formControlName="node_id"  id="node_id" class="form-control "   >
+        <div *ngIf="(f['node_id'].touched || f['node_id'].dirty  ) && f['node_id'].invalid " style="color: red;">
+          <div *ngIf="f['node_id'].errors && f['node_id'].errors['required']"  class="" > node_id is required.</div>
+
+          </div>
+          </div>
+          <div class="input-box">
+            <span class="details"> name</span>
+            <input type="text"  name="requiredKnowledge" formControlName="name"  id="name" class="form-control"  >
+            
+            <div *ngIf="(f['name'].touched || f['name'].dirty  ) && f['name'].invalid " style="color: red;">
+            
+              <div *ngIf="f['name'].errors && f['name'].errors['required']"  class="" > name is required.</div>
+   
+              </div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">serial_number:</span>
+
+            <input type="text"   name="serial_number" formControlName="serial_number" id="serial_number" >
+               
+                <div *ngIf="(f['serial_number'].touched || f['serial_number'].dirty  ) && f['serial_number'].invalid " style="color: red;">
+                  
+                  <div *ngIf="f['serial_number'].errors && f['serial_number'].errors['required']"  class="" > serial_number is required.</div>
+       
+                  </div>
+        
+
+
+          </div>
+
+
+          <div class="input-box">
+            <span class="details"> manufacturer</span>
+            <input type="text"    name="manufacturer" formControlName="manufacturer" id="manufacturer" class="form-control" >
+            <div *ngIf="(f['manufacturer'].touched || f['manufacturer'].dirty  ) && f['manufacturer'].invalid " style="color: red;">
+              
+              <div *ngIf="f['manufacturer'].errors && f['manufacturer'].errors['required']"  class="" > manufacturer is required.</div>
+   
+              </div>
+
+          </div>
+
+
+
+          <div class="input-box">
+            <span class="details">method</span>
+            <input type="text"   name="method" formControlName="method" id="method" class="form-control" >
+           
+            <div *ngIf="(f['method'].touched || f['method'].dirty  ) && f['method'].invalid " style="color: red;">
+              
+              <div *ngIf="f['method'].errors && f['method'].errors['required']"  class="" > method is required.</div>
+   
+              </div>
+    
+          </div>
+
+
+
+          <div class="input-box">
+            <span class="details"> Port</span>
+            <input type="text"    name="port"  formControlName="port"  id="port" class="form-control"  >
+           
+            <div *ngIf="(f['port'].touched || f['port'].dirty  ) && f['port'].invalid " style="color: red;">
+              
+              <div *ngIf="f['port'].errors && f['port'].errors['required']"  class=""> port is required.</div>
+   
+              </div>
+
+          </div>
+
+
+
+
+          <div class="input-box">
+            <span class="details"> Baudrate</span>
+            <input type="number"  name="vacancy" formControlName="baudrate"   id="baudrate" class="form-control"  >
+            
+                <div *ngIf="(f['baudrate'].touched || f['baudrate'].dirty  ) && f['baudrate'].invalid " style="color: red;">
+                  
+                  <div *ngIf="f['baudrate'].errors && f['baudrate'].errors['required']"  class="" > baudrate is required.</div>
+       
+                  </div>
+
+          </div>
+
+          <div class="input-box">
+            <span class="details"> Token</span>
+            <input type="text"    name="token"  formControlName="token"  id="token"  class="form-control"  >
+            <div *ngIf="(f['token'].touched || f['token'].dirty  ) && f['token'].invalid " style="color: red;">                  
+              <div *ngIf="f['token'].errors && f['token'].errors['required']"  class="" > token is required.</div>
+   
+              </div>
+
+          </div>
+
+          
+          
+
+
+        </div>
+
+     <!--    <div class="gender-details">
+   
+          <span class="gender-title"> Token</span>
+     
+            
+            <input type="text"  name="token" formControlName="token" id="token" class="form-control"  >
+                <div *ngIf="(f['token'].touched || f['token'].dirty  ) && f['token'].invalid " style="color: red;">                  
+                  <div *ngIf="f['token'].errors && f['token'].errors['required']"  class="" style="text-align: center; margin-left: 120px;"> token is required.</div>
+       
+                  </div>
+          </div> -->
+
+
+
+
+   
+      </form>
+      <div class="button"  >
+        <button type="submit" (click)="addMeter()"  [disabled]="!formValue.valid" class="btn btn-success">Ajouter</button>
+      <input type="submit"  value="Add" [disabled]="!formValue.valid" (click)="addMeter()" >
+      
+
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+      
