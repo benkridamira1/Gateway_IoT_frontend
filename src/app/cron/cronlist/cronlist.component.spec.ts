@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestAddComponent } from './test-add.component';
+import { CronlistComponent } from './cronlist.component';
 
-describe('TestAddComponent', () => {
-  let component: TestAddComponent;
-  let fixture: ComponentFixture<TestAddComponent>;
+describe('CronlistComponent', () => {
+  let component: CronlistComponent;
+  let fixture: ComponentFixture<CronlistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TestAddComponent ]
+      declarations: [ CronlistComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TestAddComponent);
+    fixture = TestBed.createComponent(CronlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

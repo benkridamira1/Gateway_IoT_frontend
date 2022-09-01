@@ -1,0 +1,96 @@
+
+  <div class="container">
+    <div class="title">Add a new Meter</div>
+    <div class="content">
+      <form [formGroup]="formValue"  (ngSubmit)="addCronJob()">
+        <div class="user-details">
+    
+          <div class="input-box">
+            <span class="details"> name</span>
+            <input type="text"  name="requiredKnowledge" formControlName="name"  id="name" class="form-control"  >
+            
+            <div *ngIf="(f['name'].touched || f['name'].dirty  ) && f['name'].invalid " style="color: red;">
+            
+              <div *ngIf="f['name'].errors && f['name'].errors['required']"  class="" > name is required.</div>
+   
+              </div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">command:</span>
+
+            <input type="text"   name="command" formControlName="command" id="command" >
+               
+                <div *ngIf="(f['command'].touched || f['command'].dirty  ) && f['command'].invalid " style="color: red;">
+                  
+                  <div *ngIf="f['command'].errors && f['command'].errors['required']"  class="" > command is required.</div>
+       
+                  </div>
+        
+
+
+          </div>
+
+
+  
+          <div class="input-box">
+            <span class="details">description</span>
+            <input type="text"   name="description" formControlName="description" id="description" class="form-control" >
+           
+            <div *ngIf="(f['description'].touched || f['description'].dirty  ) && f['description'].invalid " style="color: red;">
+              
+              <div *ngIf="f['description'].errors && f['description'].errors['required']"  class="" > description is required.</div>
+   
+              </div>
+    
+          </div>
+
+          <div class="input-box">
+            <span class="details"> enabled</span>
+            <input type="number"    name="enabled"  formControlName="enabled"  id="enabled" class="form-control"  >
+           
+            <div *ngIf="(f['enabled'].touched || f['enabled'].dirty  ) && f['enabled'].invalid " style="color: red;">
+              
+              <div *ngIf="f['enabled'].errors && f['enabled'].errors['required']"  class=""> enabled is required.</div>
+   
+              </div>
+
+          </div>
+
+          <div class="input-box">
+            <span class="details"> schedule</span>
+            <input type="text"    name="schedule" [(ngModel)]="cronForm.value"  formControlName="schedule" id="schedule" class="form-control" >
+            <div *ngIf="(f['schedule'].touched || f['schedule'].dirty  ) && f['schedule'].invalid " style="color: red;">
+              
+              <div *ngIf="f['schedule'].errors && f['schedule'].errors['required']"  class="" > schedule is required.</div>
+   
+              </div>
+
+          </div>
+
+
+        </div>
+
+   
+      </form>
+      <div class="input-box">
+        <cron-editor [formControl]="cronForm" [options]="cronOptions"></cron-editor>
+             
+      </div>
+      <div class="button"  >
+        <button type="submit" (click)="addCronJob()"  [disabled]="!formValue.valid" class="btn btn-success">Ajouter</button>
+      <input type="submit"  value="Add" [disabled]="!formValue.valid" (click)="addCronJob()" >
+      
+
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+      

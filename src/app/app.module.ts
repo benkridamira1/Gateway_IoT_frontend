@@ -17,13 +17,14 @@ import { AddMeterComponent } from './meter/add-meter/add-meter.component';
 import { ListMeterComponent } from './meter/list-meter/list-meter.component';
 import { AddGatewayComponent } from './gateway/add-gateway/add-gateway.component';
 import { ListGatewayComponent } from './gateway/list-gateway/list-gateway.component';
-import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import {authInterceptorProviders} from './_helpers/auth.interceptor';
 import { UpdateMeterComponent } from './meter/update-meter/update-meter/update-meter.component';
 import { UpdateGatewayComponent } from './gateway/update-gateway/update-gateway.component';
-import { TestAddComponent } from './test-add/test-add.component';
 import { CronComponent } from './cron/cron.component';
+import { CronEditorModule } from 'ngx-cron-editor';
+import { CronlistComponent } from './cron/cronlist/cronlist.component';
+import { AddCronJObComponent } from './cron/add-cron-job/add-cron-job.component';
 
 
 @NgModule({
@@ -35,12 +36,12 @@ import { CronComponent } from './cron/cron.component';
     ListMeterComponent,
     AddGatewayComponent,
     ListGatewayComponent,
-    AdminComponent,
     LoginComponent,
     UpdateMeterComponent,
     UpdateGatewayComponent,
-    TestAddComponent,
-    CronComponent  ],
+    CronComponent,
+    CronlistComponent,
+    AddCronJObComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -49,7 +50,8 @@ import { CronComponent } from './cron/cron.component';
     FormsModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CronEditorModule
   ],
 
   providers: [MeterService, authInterceptorProviders],

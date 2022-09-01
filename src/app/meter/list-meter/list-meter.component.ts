@@ -127,7 +127,8 @@ export class ListMeterComponent implements OnInit {
 
 
   deleteMeters(): void {
-		const selectedMeters = this.meters.filter((product : any) => product.checked).map((p:any) => p.node_id);
+		const selectedMeters = this.meters.filter((meter : any) => meter.checked).map((p:any) => p.node_id);
+    
 		
 		if(selectedMeters && selectedMeters.length > 0) {
 
@@ -135,6 +136,7 @@ export class ListMeterComponent implements OnInit {
 
       this.meterService.deleteMeter(element) // Angular 13
       .subscribe(res => {
+      
         this.msg = 'Meter successfully deleted';
         }, err => {
           this.msg = 'Something went wrong during deleting meter';
@@ -150,7 +152,7 @@ export class ListMeterComponent implements OnInit {
 
     console.log(this.msg);
 
-    window.location.reload();
+   window.location.reload();
 
 
 
