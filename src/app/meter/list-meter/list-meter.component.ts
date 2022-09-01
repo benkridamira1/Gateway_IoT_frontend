@@ -43,6 +43,10 @@ export class ListMeterComponent implements OnInit {
     }) 
    
 
+   
+
+   
+
     this.meterService.MetersList().subscribe(meter=>{
       this.meters=meter
 
@@ -72,7 +76,7 @@ export class ListMeterComponent implements OnInit {
   
 
      // this.router.navigate(['MetersList']);
-      window.location.reload();
+   //   window.location.reload();
 
     }, (error)=>{alert(error.message)})
   }

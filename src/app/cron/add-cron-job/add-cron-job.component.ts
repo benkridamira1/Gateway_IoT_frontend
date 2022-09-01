@@ -51,7 +51,7 @@ export class AddCronJObComponent implements OnInit {
       
     }); 
 
-    //this.router.navigate(['/MetersList']);
+    this.router.navigate(['/CronsList']);
    
 
   }

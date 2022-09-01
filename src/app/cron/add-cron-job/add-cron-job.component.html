@@ -47,7 +47,16 @@
 
           <div class="input-box">
             <span class="details"> enabled</span>
-            <input type="number"    name="enabled"  formControlName="enabled"  id="enabled" class="form-control"  >
+
+            <select  name="enabled"  formControlName="enabled"  id="enabled" class="form-control" required  > 
+
+            
+
+              <option value="false" selected>0</option>
+              <option value="true">1</option>
+            </select>
+            
+            <!-- <input type="number"    name="enabled"  formControlName="enabled"  id="enabled" class="form-control"  > -->
            
             <div *ngIf="(f['enabled'].touched || f['enabled'].dirty  ) && f['enabled'].invalid " style="color: red;">
               

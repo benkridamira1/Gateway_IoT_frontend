@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CronJob } from 'src/app/models/cronjob';
+import { FormBuilder, FormControl, FormGroup , Validators} from '@angular/forms';
+import { Router,RouterLink } from '@angular/router';
+
+
 
 
 import {CronService  } from 'src/app/services/cron.service'
@@ -21,10 +25,24 @@ export class CronlistComponent implements OnInit {
   oldjob : CronJob = new CronJob();
   x!:any;
 
+  formValue!:FormGroup; 
 
-  constructor(private cronservice :CronService ) { }
+
+  id_updated_meter !: any;
+  old: CronJob = new CronJob();
+
+
+  constructor(private cronservice :CronService, private router : Router , private formbuilder:FormBuilder ) { }
 
   ngOnInit(): void {
+
+    this.formValue=this.formbuilder.group({
+      name: [''],
+      command: [''],
+      schedule: [''],
+      description: [''],
+      enabled:Number
+    }) 
 
     this.cronservice.CronJobsList().subscribe(cronJob=>{
     
@@ -64,12 +82,27 @@ export class CronlistComponent implements OnInit {
     console.log("OldMeterID: this id= "+$name);
     console.log("OldMeterID:   this id_updated_meter= "+this.id_updated_job);
 
+    this.cronservice.getCronJobByName($name).subscribe(data => { this.oldjob=<CronJob>data ;
+       console.log(this.oldjob);});
+     
+      
 
-
-    this.cronservice.getCronJobByName($name).subscribe(data => { this.oldjob=<CronJob>data ; console.log(this.oldjob);});
-
+  
       
   }
+
+
+  update(){
+    console.log("hello amira");
+    this.cronservice.updateCronJob(this.oldjob,this.id_updated_job).subscribe(off=>{
+  
+  
+     // this.router.navigate(['MetersList']);
+     // window.location.reload();
+  
+    }, (error)=>{alert(error.message)})
+  }
+  
 
   deleteCronJob($name:string){
     $name=this.id_updated_job;

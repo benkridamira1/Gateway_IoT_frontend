@@ -57,7 +57,7 @@
 
 
 
-							<a type="button"  data-toggle="modal" data-target="#amira" (click)="OldJobName(cronjob.name)">
+							<a type="button"  data-toggle="modal" data-target="#updateCronJ0b" (click)="OldJobName(cronjob.name)">
 
                          	<!-- <a routerLink="editMeter/{{meter.node_id}}">					 -->
 						 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16" color="green">
@@ -65,58 +65,7 @@
 							  </svg>
 							  </a>
 
- <!------------------------------------------------------------------------------------------------------------------------------------------------> 
-
-      <!-- Modal -->
-      <div class="modal fade" id="amira" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog " role="document">
-        <!--   <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Update Meter</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body" >
-    
-              <form class="form-inline" [formGroup]="formValue"> 
-                   
-
-               
-                        <label class="sr-only" for="inlineFormInputName2">Meter Name</label>
-                  
-                        
-                         <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="node_id" style="width: 100%;" id="inlineFormInputName2" placeholder="node_id" [(ngModel)]="oldmeter.node_id"  >
-                      
-                         <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="name" style="width: 100%;"  placeholder="name"  [(ngModel)]="oldmeter.name"  >
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="serial_number" style="width: 100%;"  placeholder="serial_number"  [(ngModel)]="oldmeter.serial_number" >
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="manufacturer" style="width: 100%;"  placeholder="manufacturer"  [(ngModel)]="oldmeter.manufacturer">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="method" style="width: 100%;"  placeholder="method"  [(ngModel)]="oldmeter.method">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="port" style="width: 100%;"  placeholder="port"  [(ngModel)]="oldmeter.port">
-                        <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="baudrate" style="width: 100%;"  placeholder="baudrate"  [(ngModel)]="oldmeter.baudrate">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="token" style="width: 100%;"  placeholder="token"  [(ngModel)]="oldmeter.token">
-
-
-
-                </form>
-    
-
-
-
-    
-    
-            </div>
-            <div class="modal-footer" >
-              <button type="button"  style="margin-right: 70px;" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" style="margin-right: 10px;"  (click)="update()" class="btn btn-secondary">Update</button>
-
-            </div>
-          </div> -->
-        </div>
-      </div>
-
-<!--------------------------------------------------------------------------------------------------------------------------------------------------->
-
+ 
 
 <a type="button"  data-toggle="modal" data-target="#deleteEmployeeModal" (click)="OldJobName(cronjob.name)">
 
@@ -155,6 +104,66 @@
   
 <!-------------------------------------------------------------------------------------------------------------------------------------->
 							 </a> 
+
+
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------> 
+
+      <!-- Modal -->
+      <div class="modal fade" id="updateCronJ0b" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Update   Cron Job : </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" >
+    
+              
+              <form class="form-inline" [formGroup]="formValue"> 
+        
+                        
+ 
+                        
+                <label >Name:</label>
+   
+                            <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="name" style="width: 100%;"  placeholder="name"  [(ngModel)]="oldjob.name"  >
+                
+                
+                            <label >command:</label>
+   
+                <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="command" style="width: 100%;"  placeholder="command"  [(ngModel)]="oldjob.command" >
+                <label >description:</label>
+   
+                <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="description" style="width: 100%;"  placeholder="description"  [(ngModel)]="oldjob.description">
+                <label >enabled:</label>
+   
+                <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="enabled" style="width: 100%;"  placeholder="enabled"  [(ngModel)]="oldjob.enabled">
+                <label >schedule:</label>
+   
+                <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="schedule" style="width: 100%;"  placeholder="schedule"  [(ngModel)]="oldjob.schedule">
+             
+   
+   
+                   </form>
+
+
+    
+    
+            </div>
+            <div class="modal-footer" >
+              <button type="button"  style="margin-right: 70px;" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" style="margin-right: 10px;"  (click)="update()" class="btn btn-secondary">Update</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!--------------------------------------------------------------------------------------------------------------------------------------------------->
+
 
                         </td>
                     </tr>

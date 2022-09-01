@@ -61,7 +61,7 @@
 
 
 
-							<a type="button"  data-toggle="modal" data-target="#amira" (click)="OldMeterID(meter.node_id)">
+							<a type="button"  data-toggle="modal" data-target="#updateMeter" (click)="OldMeterID(meter.node_id)">
 
                          	<!-- <a routerLink="editMeter/{{meter.node_id}}">					 -->
 						 			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16" color="green">
@@ -72,7 +72,7 @@
  <!------------------------------------------------------------------------------------------------------------------------------------------------> 
 
       <!-- Modal -->
-      <div class="modal fade" id="amira" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="updateMeter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog " role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -85,20 +85,33 @@
     
               <form class="form-inline" [formGroup]="formValue"> 
                    
-
-               
-                        <label class="sr-only" for="inlineFormInputName2">Meter Name</label>
+				
+            
+                        <label >Node_id:</label>
                   
                         
                          <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="node_id" style="width: 100%;" id="inlineFormInputName2" placeholder="node_id" [(ngModel)]="oldmeter.node_id"  >
-                      
+						 <label >Name:</label>
+
                          <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="name" style="width: 100%;"  placeholder="name"  [(ngModel)]="oldmeter.name"  >
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="serial_number" style="width: 100%;"  placeholder="serial_number"  [(ngModel)]="oldmeter.serial_number" >
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="manufacturer" style="width: 100%;"  placeholder="manufacturer"  [(ngModel)]="oldmeter.manufacturer">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="method" style="width: 100%;"  placeholder="method"  [(ngModel)]="oldmeter.method">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="port" style="width: 100%;"  placeholder="port"  [(ngModel)]="oldmeter.port">
-                        <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="baudrate" style="width: 100%;"  placeholder="baudrate"  [(ngModel)]="oldmeter.baudrate">
-                        <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="token" style="width: 100%;"  placeholder="token"  [(ngModel)]="oldmeter.token">
+						 <label >Serial_number:</label>
+
+						 <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="serial_number" style="width: 100%;"  placeholder="serial_number"  [(ngModel)]="oldmeter.serial_number" >
+						 <label >Manufacturer:</label>
+
+						 <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="manufacturer" style="width: 100%;"  placeholder="manufacturer"  [(ngModel)]="oldmeter.manufacturer">
+						 <label >Method:</label>
+
+						 <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="method" style="width: 100%;"  placeholder="method"  [(ngModel)]="oldmeter.method">
+						 <label >Port:</label>
+
+						 <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="port" style="width: 100%;"  placeholder="port"  [(ngModel)]="oldmeter.port">
+						 <label >Baudrate:</label>
+
+						 <input type="number" class="form-control mb-2 mr-sm-2"   formControlName="baudrate" style="width: 100%;"  placeholder="baudrate"  [(ngModel)]="oldmeter.baudrate">
+						 <label >Token:</label>
+
+						 <input type="text" class="form-control mb-2 mr-sm-2"   formControlName="token" style="width: 100%;"  placeholder="token"  [(ngModel)]="oldmeter.token">
 
 
 
